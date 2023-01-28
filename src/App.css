@@ -2,6 +2,9 @@
     --primary-color: #141542;
     --font-color: rgb(236, 235, 235); 
 }
+html{
+    overflow: hidden;
+}
 /*---------Container Styles---------*/
 body{
     background-color: var(--primary-color);
@@ -9,6 +12,7 @@ body{
     align-items: center;
     justify-content: center;
     min-width: 100vh;
+    width: 100%;
     min-height: 100vh;
     height: 1000px;
     margin: 0;
@@ -55,11 +59,11 @@ body{
 }
 .propertiesBox{
     height: 35%;
-    margin: 1.5rem 40px;
+    margin: 1.5rem auto;
 }
 img{
     width: 80%;
-    margin: -5rem auto -4rem;
+    margin: -1rem auto -4rem;
 }
 h3{
     font-size: 65px;
@@ -90,4 +94,27 @@ h3{
 }
 button:hover{
     cursor: pointer;
+}
+
+/* ------transitions-----*/
+
+.fade-enter{
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+}
+.fade-enter.fade-enter-active{
+    opacity: 1;
+    transition: opacity 300ms linear 300ms;
+    margin: auto;
+}
+.fade-exit{
+    opacity: 1;
+}
+.fade-exit.fade-exit-active{
+    opacity: 0;
+    transition: opacity 300ms linear;
+}
+.fade-exit-done{
+    opacity: 0;
 }

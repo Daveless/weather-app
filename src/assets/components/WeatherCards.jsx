@@ -2,7 +2,7 @@ import React from 'react'
 import './weatherCards.css'
 import PropertiesToggler from '../components/PropertiesToggler'
 const celciussymbol = "°C"
-const fahrenheitsymbol = "°K"
+const fahrenheitsymbol = "°F"
 const WeatherCards = ({weather, temps, isCelcius, changeUnitTemp}) => {
   return (
     <section className='weatherCards'>

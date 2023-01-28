@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import WeatherCards from './assets/components/WeatherCards'
 
+
 const API_KEY = '9b340e56903807b0518c00dd8be7ed27'
 
 

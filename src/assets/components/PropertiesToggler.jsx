@@ -1,15 +1,29 @@
 import React, { useEffect, useState } from 'react'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import './propertiesToggler.css'
 
 
 
 const propertiesToggler = ({weather}) => {
 
-    const description = 'Weather: '+weather?.weather[0].description
-    const windSpeed = 'Wind Speed: '+weather?.wind.speed+'m/s'
-    const clouds = 'Clouds: '+weather?.clouds.all+'%'
-    const pressure = 'Pressure: '+weather?.main.pressure+'hPa'
-    const [data, setdata] = useState()
+    const description = {propertyName: 'Weather:',
+                        propertyValue: weather?.weather[0].description}
+
+    const windSpeed = {propertyName: 'Wind Speed:',
+                        propertyValue: weather?.wind.speed+'m/s'}
+
+    const clouds = {propertyName: 'Clouds:',
+                        propertyValue: weather?.clouds.all+'%'}
+
+    const pressure = {propertyName: 'Pressure:',
+                        propertyValue: weather?.main.pressure+'hPa'}
+
+
+    // const windSpeed = 'Wind Speed: '+weather?.wind.speed+'m/s'
+    // const clouds = 'Clouds: '+weather?.clouds.all+'%'
+    // const pressure = 'Pressure: '+weather?.main.pressure+'hPa'
+
+    const [data, setdata] = useState({})
 
     
     const changetoClouds = () => {
@@ -25,8 +39,6 @@ const propertiesToggler = ({weather}) => {
         setdata(description);
     }
    
-
-
                 //   <li>{weather?.weather[0].main}, {weather?.weather[0].description}</li>
                 //   <li><span>Wind Speed: {weather?.wind.speed}m/s</span></li>
                 //   <li><span>Clouds: {weather?.clouds.all}%</span></li>
@@ -39,9 +51,20 @@ const propertiesToggler = ({weather}) => {
   return (
     <div className='propertiesBox'> 
 
-        <div className='propertiesData'>
-            <p>{data}</p>
-        </div>
+        <TransitionGroup className='propertiesData'>
+          <CSSTransition
+          timeout={600}
+          classNames='fade'
+          key={data.propertyName}
+          >
+            <div classNames='dataBox'>
+            <p>{data.propertyName}</p>
+          <p>{data.propertyValue}</p>
+            </div>
+          
+
+          </CSSTransition>
+        </TransitionGroup>
 
         <div className='icons'>
             <ul className='propertiesIcons'>

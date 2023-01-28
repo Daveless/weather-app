@@ -1,9 +1,11 @@
 .propertiesBox{
     margin-top: 1rem;
 }
+
 ul{
     list-style-type: none;
     display: flex;
+    
 }
 .propertiesIcons svg{
     width: 100%;
@@ -11,14 +13,20 @@ ul{
     background: none;
 }
 .propertiesIcons button{
-    background-color: #1a1b52;
+    background-color: #24266d;
     border-radius: 1rem;
     width: 80%;
     margin: auto;
+    padding: 0.5rem;
     border: none;
 }
 .propertiesData{
-    font-size: 50px;
+    font-size: 30px;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
     text-align: center;
     margin: 1rem;
+    padding: 1rem;
+    background-color: #24266d;
 }
