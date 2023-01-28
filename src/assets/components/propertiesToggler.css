@@ -1,0 +1,24 @@
+.propertiesBox{
+    margin-top: 1rem;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+}
+.propertiesIcons svg{
+    width: 100%;
+    margin: auto;
+    background: none;
+}
+.propertiesIcons button{
+    background-color: #1a1b52;
+    border-radius: 1rem;
+    width: 80%;
+    margin: auto;
+    border: none;
+}
+.propertiesData{
+    font-size: 50px;
+    text-align: center;
+    margin: 1rem;
+}
